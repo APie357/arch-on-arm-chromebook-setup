@@ -6,7 +6,7 @@ To install Arch Linux on your arm64 Chromebook, find your Chromebook on [archlin
 You must run the following command as root. If you don't have curl installed, install it with `pacman -S curl`. Make sure youi have access to the internet! Use `wifi-menu` if you are using wifi.
 ```sh
 # Setup script doesn't exist yet. Will make one soon.
-curl <nonexistant url> | bash
+curl https://raw.githubusercontent.com/Genius-Format/arch-on-arm-chromebook-setup/main/setup.sh | bash
 ```
 Default login:
 
