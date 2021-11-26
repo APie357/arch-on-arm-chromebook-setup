@@ -63,11 +63,15 @@ def main():
     print("OK")
 
     print("Installing software...")
-    os.system("pacman -Sy sudo vim nano git base-devel")
+    os.system("pacman -Syu sudo vim nano git base-devel")
     with open("/etc/sudoers", "a") as sudoersFile:
         sudoersFile.write("\n%wheel ALL=(ALL) ALL\nUSER_NAME HOST_NAME= NOPASSWD: /usr/bin/halt,/usr/bin/poweroff,/usr/bin/reboot,/usr/bin/shutdown")
+    os.system("chown -c root:root /etc/sudoers && chmod -c 0440 /etc/sudoers")
     os.system("userdel alarm")
     os.system("git clone https://aur.archlinux.org/yay-git.git /tmp/yay && cd /tmp/yay")
+    os.system("makepkg -siy")
+    os.system("cd ~")
+    os.system("yay -Syu firefox exa-git i3-git i3status dmenu xorg xorg-xinit lightdm lightdm-webkit-greeter")
 
 
 if(__name__ == "__main__"):
