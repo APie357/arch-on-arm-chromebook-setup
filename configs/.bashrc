@@ -1,5 +1,5 @@
 export EDITOR=nano
-export VISUAL=nano
+export VISUAL=vim
 export CLICOLOR=1
 export TERM=xterm-256color
 
